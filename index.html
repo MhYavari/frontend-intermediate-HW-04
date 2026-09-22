@@ -1,13 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>t4</title>
+    <title>APi تمرین ۴</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="bg-slate-100 font-sans text-slate-800 p-8">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8 text-center">async and await</h1>
+
+      <!-- ۱. وضعیت لودینگ (Loading State) -->
+      <div
+        id="loading-state"
+        class="flex flex-col items-center justify-center py-20"
+      >
+        <div
+          class="w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mb-4"
+        ></div>
+        <p class="text-slate-500 font-medium">
+          در حال دریافت اطلاعات از سرور...
+        </p>
+      </div>
+
+      <!-- ۲. وضعیت خطا (Error State) - در ابتدا مخفی است (hidden) -->
+      <div
+        id="error-state"
+        class="hidden bg-rose-50 border border-rose-200 rounded-xl p-8 text-center"
+      >
+        <p id="error-message" class="text-rose-600 font-bold mb-4">
+          خطایی رخ داده است!
+        </p>
+        <button
+          id="retry-btn"
+          class="bg-rose-600 hover:bg-rose-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+        >
+          تلاش مجدد
+        </button>
+      </div>
+
+      <!-- بخش دسته‌بندی‌ها که به کد اضافه شد (در ابتدا مخفی است) -->
+      <div
+        id="categories-bar"
+        class="hidden flex flex-wrap gap-3 justify-center mb-8"
+      >
+        <!-- تگ‌های دسته‌بندی اینجا رندر می‌شوند -->
+      </div>
+
+      <!-- ۳. وضعیت موفقیت (Grid محصولات) - در ابتدا مخفی است (hidden) -->
+      <div
+        id="products-grid"
+        class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <!-- کارت‌های محصولات اینجا رندر می‌شوند -->
+      </div>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
